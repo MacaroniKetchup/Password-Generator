@@ -9,7 +9,7 @@ This application is a random password generator, where you will follow and answe
 
 ## Author
 
-- [@MmacaroniKetchup](https://github.com/MacaroniKetchup)
+- [@MacaroniKetchup](https://github.com/MacaroniKetchup)
 
 ## Demo
 
