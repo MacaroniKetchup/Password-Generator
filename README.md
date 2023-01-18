@@ -13,7 +13,7 @@ This application is a random password generator, where you will follow and answe
 
 ## Demo
 
-![Password Generator Demo](assets\brave_WUuMWwnRoK.gif)
+![Password Generator Demo](assets/brave_WUuMWwnRoK.gif)
 
 ## Features
 - Generates a randomized password based of window prompts
