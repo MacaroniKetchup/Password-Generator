@@ -1,59 +1,44 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Write password to the #password input
 function writePassword() {
-  let passwordText = document.querySelector("password");
+  let passwordText = document.querySelector("#password");
+  
+  //Length
+  let length = Number(prompt("Enter the length of your password between 8-128 characters."))
+  //character types
+  let charType = prompt("What should we include in your password? Type 'uppercase, lowercase, numbers, symbols' to include. ")
+  
+  passwordText.value = password(length, charType);
 
-  //Not getting the window prompt to show up, do I need to console.log the prompt? or am I missing something?
-  //Set Length
-  let length = Number(prompt(" Enter length of your password between 8-128 characters. "))
-  //Set character parameters
-  let charType = prompt(" Whats included in your password? Please type 'uppercase, lowercase, numbers, symbols'. ")
-
-  passwordText.value = password(length, charType)
-
-  //Character parameters
   function password(length, charType) {
     let charGen = {
       lowercase: 'abcdefghijklmnopqrstuvwxyz',
-      upercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+      uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWRXYZ',
       numbers: '0123456789',
       symbols: '!@#$%^&*()-_=+',
     };
-
+    
     var charTypes = charType.toLowerCase().split(', ');
     charSet = "";
-    for (var i = 0; i < charTypes.length; i++) {
-      charSet = + charGen[charTypes[i]];
+    for(var i=0; i < charTypes.length; i++) {
+      charSet += charGen[charTypes[i]];
     }
-
+    
     console.log(charSet);
 
     var retVal = "";
-
+    
     for (var i = 0; i < length; i++) {
-      retVal = + charSet.charAt(Math.floor(Math.random() * charSet.length));
+      retVal += charSet.charAt(Math.floor(Math.random() * charSet.length));
     }
     return retVal;
   }
 }
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
 
 // Basic password generator code for example
 
